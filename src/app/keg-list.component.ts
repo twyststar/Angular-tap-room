@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
 export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender= new EventEmitter();
-
+  @Output() saleClickSender = new EventEmitter();
   filterByBrand: string = "allBrands";
 
   onChange(optionFromMenu) {
@@ -18,5 +18,8 @@ export class KegListComponent {
 
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
+  }
+  salesButtonHasBeenClicked(salesKegToEdit: Keg){
+    this.saleClickSender.emit(salesKegToEdit)
   }
 }

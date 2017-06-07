@@ -9,8 +9,10 @@
       <li>{{keg.brand}}</li>
       <li>${{keg.price}} pint</li>
       <li>{{keg.alcContent}}</li>
+      <li>{{keg.amount}} pints left</li>
     </ul>
       <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+      <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
 </li>
 
 </ul>

@@ -1,5 +1,6 @@
 
 
-<keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+<keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (saleClickSender)="salesKeg($event)"></keg-list>
+<keg-sales [childSalesSelectedKeg]="salesSelectedKeg" (finalizeButtonClickSender)="finishedSales()"></keg-sales>
  <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
 <new-keg (newKegSender)="addKeg($event)"></new-keg>
