@@ -15,4 +15,16 @@ export class KegSalesComponent {
     this.finalizeButtonClickSender.emit();
   }
 
+  sellAPint(currentKeg){
+    currentKeg.amount = (currentKeg.amount - 1)
+  }
+  sellAGrowler(currentKeg){
+    currentKeg.amount = (currentKeg.amount - 2)
+  }
+  sellALargeGrowler(currentKeg){
+    currentKeg.amount = (currentKeg.amount - 4)
+  }
+  tapNewKeg(currentKeg){
+    currentKeg.amount = 124
+  }
 }

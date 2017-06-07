@@ -2,6 +2,10 @@
   <div *ngIf="childSalesSelectedKeg">
     <h3>{{childSalesSelectedKeg.name}}</h3>
     <h2>{{childSalesSelectedKeg.amount}}</h2>
+    <button (click)="sellAPint(childSalesSelectedKeg)">Sell Pint</button>
+    <button (click)="sellAGrowler(childSalesSelectedKeg)">Sell Growler</button>
+    <button (click)="sellALargeGrowler(childSalesSelectedKeg)">Sell Large Growler</button>
+    <button (click)="tapNewKeg(childSalesSelectedKeg)">Tap A new Keg</button>
     <button (click)="finalizeButtonClick()">Done</button>
   </div>
 </div>

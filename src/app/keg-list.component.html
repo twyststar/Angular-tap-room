@@ -4,10 +4,10 @@
 </select>
 
 <ul>
-  <li *ngFor="let keg of childKegList | brand:filterByBrand">{{keg.name}}
+  <li [class]="lowWarning(keg)" *ngFor="let keg of childKegList | brand:filterByBrand">{{keg.name}}
     <ul>
       <li>{{keg.brand}}</li>
-      <li>${{keg.price}} pint</li>
+      <li [class]="priceColor(keg)">${{keg.price}} pint</li>
       <li>{{keg.alcContent}}</li>
       <li>{{keg.amount}} pints left</li>
     </ul>

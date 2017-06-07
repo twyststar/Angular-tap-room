@@ -22,4 +22,20 @@ export class KegListComponent {
   salesButtonHasBeenClicked(salesKegToEdit: Keg){
     this.saleClickSender.emit(salesKegToEdit)
   }
+
+  priceColor(currentKeg){
+    if (currentKeg.price >= 7){
+      return "bg-warning";
+    } else if (currentKeg.price >= 4) {
+      return  "bg-success";
+    } else {
+      return "bg-info";
+    }
+  }
+
+  lowWarning(currentKeg){
+    if(currentKeg.amount<=10){
+      return "bg-danger"
+    }
+  }
 }
