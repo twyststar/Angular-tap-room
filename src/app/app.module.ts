@@ -8,6 +8,7 @@ import { KegListComponent }  from './keg-list.component';
 import { EditKegComponent } from './edit-keg.component';
 import { NewKegComponent } from './new-keg.component';
 import{KegSalesComponent } from './keg-sales.component';
+// import{KegHeadingComponent } from './keg-heading.component';
 import { BrandPipe } from './brand.pipe';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { BrandPipe } from './brand.pipe';
     EditKegComponent,
     NewKegComponent,
     KegSalesComponent,
+    // KegHeadingComponent,
     BrandPipe
   ],
   imports: [

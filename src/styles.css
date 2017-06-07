@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.bg-warning, .bg-info, .bg-success {
+  width: 10%;
+}
+.jumbotron {
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/32/83/de/3283de979b025f331df3869dcad1a12a.jpg");
+}
