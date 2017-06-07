@@ -8,12 +8,15 @@ import {Keg} from './keg.model';
 
 
 export class BrandPipe implements PipeTransform {
-  transform(input: Keg[]) {
+  transform(input: Keg[], desiredBrand) {
     var output: Keg[] = [];
     for (var i = 0; i < input.length; i++) {
-      if (input[i].brand === "New Belgium") {
+      if (desiredBrand === "allBrands"){
         output.push(input[i]);
       }
+      else if (input[i].brand === desiredBrand) {
+        output.push(input[i]);
+      } 
     }
     return output;
   }

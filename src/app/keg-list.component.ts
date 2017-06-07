@@ -10,6 +10,12 @@ export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender= new EventEmitter();
 
+  filterByBrand: string = "allBrands";
+
+  onChange(optionFromMenu) {
+  this.filterByBrand = optionFromMenu;
+  }
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
