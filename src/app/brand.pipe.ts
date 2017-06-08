@@ -16,7 +16,7 @@ export class BrandPipe implements PipeTransform {
       }
       else if (input[i].brand === desiredBrand) {
         output.push(input[i]);
-      } 
+      }
     }
     return output;
   }

@@ -11,11 +11,19 @@ export class KegListComponent {
   @Output() clickSender= new EventEmitter();
   @Output() saleClickSender = new EventEmitter();
   filterByBrand: string = "allBrands";
-
+  brandPipe = null;
+  filterPipe = "allKegs";
+  filterByPrice: string = "byPrice";
   onChange(optionFromMenu) {
   this.filterByBrand = optionFromMenu;
+  this.brandPipe = "show";
+  this.filterPipe = null;
   }
-
+  onChoice(optionFromMenu){
+    this.filterByPrice = optionFromMenu;
+    this.filterPipe = "allKegs";
+    this.brandPipe = null;
+  }
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }

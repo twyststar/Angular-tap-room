@@ -11,9 +11,9 @@ selectedKeg = null;
 salesSelectedKeg = null;
   masterKegList: Keg[] = [
 
-    new Keg('Arrogant Bastard Ale', 'Stone', 5, '5.5%', 124),
-    new Keg('Fat Tire', 'New Belgium', 3, '5.5%', 124),
-    new Keg('Drunken Monk', 'Anna', 8, '7.5%', 124)
+    new Keg('Arrogant Bastard Ale', 'Stone', 5, 5.5, 124),
+    new Keg('Fat Tire', 'New Belgium', 3, 5.5, 124),
+    new Keg('Drunken Monk', 'Anna', 8, 7.5, 124)
   ];
   editKeg(clickedKeg) {
    this.selectedKeg = clickedKeg;

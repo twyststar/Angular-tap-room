@@ -1,14 +1,37 @@
-<select (change)="onChange($event.target.value)">
+
+
+<select (change)="onChoice($event.target.value)">
+  <option value="byPrice">Filter by Price</option>
+  <option value="allKegs">Show All</option>
+</select>
+<!-- *ngIf="brandPipe" -->
+<select  (change)="onChange($event.target.value)">
   <option value="allBrands">All Brands</option>
   <option *ngFor="let keg of childKegList" value="{{keg.brand}}">{{keg.brand}}</option>
 </select>
 
-<ul>
-  <li [class]="lowWarning(keg)" *ngFor="let keg of childKegList | brand:filterByBrand">{{keg.name}}
+<ul *ngIf="filterPipe">
+  <li [class]="lowWarning(keg)" *ngFor="let keg of childKegList | filter:filterByPrice">{{keg.name}}
     <ul>
       <li>{{keg.brand}}</li>
-      <li [class]="priceColor(keg)">${{keg.price}} pint</li>
-      <li>{{keg.alcContent}}</li>
+      <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
+      <li>{{keg.alcContent}}% ABV</li>
+      <li>{{keg.amount}} pints left</li>
+    </ul>
+      <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+      <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+</li>
+
+</ul>
+
+
+
+<ul *ngIf="brandPipe">
+  <li  [class]="lowWarning(keg)" *ngFor="let keg of childKegList | brand:filterByBrand">{{keg.name}}
+    <ul>
+      <li>{{keg.brand}}</li>
+      <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
+      <li>{{keg.alcContent}}% ABV</li>
       <li>{{keg.amount}} pints left</li>
     </ul>
       <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
