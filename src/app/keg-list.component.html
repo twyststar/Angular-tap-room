@@ -1,7 +1,8 @@
 
-
 <select (change)="onChoice($event.target.value)">
   <option value="byPrice">Filter by Price</option>
+  <option value="alcVol">Filter by Strength</option>
+  <option value="amtLeft">Filter by amount left in keg</option>
   <option value="allKegs">Show All</option>
 </select>
 <!-- *ngIf="brandPipe" -->
@@ -10,32 +11,44 @@
   <option *ngFor="let keg of childKegList" value="{{keg.brand}}">{{keg.brand}}</option>
 </select>
 
-<ul *ngIf="filterPipe">
-  <li [class]="lowWarning(keg)" *ngFor="let keg of childKegList | filter:filterByPrice">{{keg.name}}
-    <ul>
-      <li>{{keg.brand}}</li>
-      <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
-      <li>{{keg.alcContent}}% ABV</li>
-      <li>{{keg.amount}} pints left</li>
-    </ul>
-      <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
-      <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
-</li>
+<!-- price/amount left/alcVol filtered list -->
+<div  *ngIf="filterPipe" >
+  <div [class]="lowWarning(keg)"  *ngFor="let keg of childKegList | filter:filterByPrice">
+    <div class="panel-heading">
+      <h3>{{keg.name}}</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li>{{keg.brand}}</li>
+        <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
+        <li>{{keg.alcContent}}% ABV</li>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <h5>{{keg.amount}} pints left</h5>
+    </div>
+    <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+    <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+  </div>
+</div>
 
-</ul>
-
-
-
-<ul *ngIf="brandPipe">
-  <li  [class]="lowWarning(keg)" *ngFor="let keg of childKegList | brand:filterByBrand">{{keg.name}}
-    <ul>
-      <li>{{keg.brand}}</li>
-      <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
-      <li>{{keg.alcContent}}% ABV</li>
-      <li>{{keg.amount}} pints left</li>
-    </ul>
-      <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
-      <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
-</li>
-
-</ul>
+<!-- Brand filtered list -->
+<div  *ngIf="brandPipe" >
+  <div [class]="lowWarning(keg)"  *ngFor="let keg of childKegList | brand:filterByBrand">
+    <div class="panel-heading">
+      <h3>{{keg.name}}</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li>{{keg.brand}}</li>
+        <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
+        <li>{{keg.alcContent}}% ABV</li>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <h5>{{keg.amount}} pints left</h5>
+    </div>
+    <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+    <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+  </div>
+</div>

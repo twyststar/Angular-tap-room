@@ -43,7 +43,9 @@ export class KegListComponent {
 
   lowWarning(currentKeg){
     if(currentKeg.amount<=10){
-      return "bg-danger"
+      return "panel panel-danger"
+    } else {
+      return "panel panel-default"
     }
   }
 }

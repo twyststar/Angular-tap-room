@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
 export class AppComponent {
 selectedKeg = null;
 salesSelectedKeg = null;
-  masterKegList: Keg[] = [
+masterKegList: Keg[] = [
 
     new Keg('Arrogant Bastard Ale', 'Stone', 5, 5.5, 124),
     new Keg('Fat Tire', 'New Belgium', 3, 5.5, 124),

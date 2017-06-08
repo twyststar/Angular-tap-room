@@ -11,6 +11,7 @@ import{KegSalesComponent } from './keg-sales.component';
 import{ KegHeadingComponent } from './keg-heading.component';
 import { BrandPipe } from './brand.pipe';
 import { FilterPipe } from './filterPipe.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
