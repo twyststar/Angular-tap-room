@@ -15,7 +15,7 @@ masterKegList: Keg[] = [
     new Keg('Fat Tire', 'New Belgium', 3, 5.5, 124),
     new Keg('Drunken Monk', 'Anna', 8, 7.5, 124),
     new Keg('Drunken Mom', 'HappyParents', 4, 10, 124),
-    new Keg('A. Bastard', 'Stone', 5, 5.5, 124)
+    new Keg('Arrogant Bastard', 'Stone', 5, 5.5, 124)
 
   ];
   editKeg(clickedKeg) {

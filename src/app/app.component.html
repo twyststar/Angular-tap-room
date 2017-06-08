@@ -1,4 +1,4 @@
-
+<div class="container-fluid">
 <keg-heading></keg-heading>
 
 <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (saleClickSender)="salesKeg($event)"></keg-list>
@@ -8,3 +8,4 @@
  <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
 
 <new-keg (newKegSender)="addKeg($event)"></new-keg>
+</div>

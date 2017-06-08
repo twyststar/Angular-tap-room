@@ -5,6 +5,7 @@
   width: 20%;
 }
 .jumbotron {
+  margin-top: 15px;
   background-image: url("./assets/img/taps.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,11 +14,11 @@
   font-family: 'Shadows Into Light', cursive;
   font-size: 120px;
   font-weight: bolder;
-  margin-left: 78%;
+  margin-left: 80%;
   /*color: #dbdde0;*/
   background-color: #ceccc8;
   border-radius: 50%;
-  padding-left: 30px;
+  padding-left: 40px;
 }
 .pint {
   height: 100px;
@@ -29,4 +30,12 @@
   width: 33%;
   display: inline-grid;
   font-family: 'Roboto', sans-serif;
+}
+
+.panel-body {
+  min-height: 230px;
+}
+
+.container-fluid {
+  background-color: #bab29c;
 }

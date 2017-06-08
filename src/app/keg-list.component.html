@@ -1,4 +1,6 @@
 
+
+
 <select (change)="onChoice($event.target.value)">
   <option value="byPrice">Filter by Price</option>
   <option value="alcVol">Filter by Strength</option>
@@ -13,26 +15,28 @@
 
 <!-- price/amount left/alcVol filtered list -->
 <div  *ngIf="filterPipe" >
-  <div [class]="lowWarning(keg)"  *ngFor="let keg of childKegList | filter:filterByPrice">
-    <div class="panel-heading">
-      <h3>{{keg.name}}</h3>
-    </div>
-    <div class="panel-body">
-      <img *ngIf="keg.amount >= 63" class="pint" src="./assets/img/full.jpeg" alt="" />
-      <img *ngIf="keg.amount >= 11 && keg.amount <= 62" class="pint" src="./assets/img/half-pint.jpg" alt="" />
-      <img *ngIf="keg.amount <= 10" class="pint" src="./assets/img/empty.jpg" alt="" />
-      <ul>
-        <li>{{keg.brand}}</li>
-        <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
-        <li>{{keg.alcContent}}% ABV</li>
-      </ul>
-    </div>
-    <div class="panel-footer">
-      <h5>{{keg.amount}} pints left</h5>
-    </div>
-    <button class="btn btn-default" (click)="editButtonHasBeenClicked(keg)">Edit!</button>
-    <button class="btn btn-default" (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+    <div [class]="lowWarning(keg)"  *ngFor="let keg of childKegList | filter:filterByPrice">
+      <div class="panel-heading">
+        <h3>{{keg.name}}</h3>
+      </div>
+      <div class="panel-body">
+        <img *ngIf="keg.amount >= 63" class="pint" src="./assets/img/full.jpeg" alt="" />
+        <img *ngIf="keg.amount >= 11 && keg.amount <= 62" class="pint" src="./assets/img/half-pint.jpg" alt="" />
+        <img *ngIf="keg.amount <= 10" class="pint" src="./assets/img/empty.jpg" alt="" />
+        <ul>
+          <li>{{keg.brand}}</li>
+          <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
+          <li>{{keg.alcContent}}% ABV</li>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <h5>{{keg.amount}} pints left</h5>
+      </div>
+      <button class="btn btn-default" (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+      <button class="btn btn-default" (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+
   </div>
+
 </div>
 
 <!-- Brand filtered list -->
@@ -42,6 +46,9 @@
       <h3>{{keg.name}}</h3>
     </div>
     <div class="panel-body">
+      <img *ngIf="keg.amount >= 63" class="pint" src="./assets/img/full.jpeg" alt="" />
+      <img *ngIf="keg.amount >= 11 && keg.amount <= 62" class="pint" src="./assets/img/half-pint.jpg" alt="" />
+      <img *ngIf="keg.amount <= 10" class="pint" src="./assets/img/empty.jpg" alt="" />
       <ul>
         <li>{{keg.brand}}</li>
         <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
