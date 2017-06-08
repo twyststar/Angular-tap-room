@@ -5,5 +5,17 @@
   width: 10%;
 }
 .jumbotron {
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/32/83/de/3283de979b025f331df3869dcad1a12a.jpg");
+  background-image: url("./assets/img/taps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 120px;
+  font-weight: bolder;
+  margin-left: 78%;
+  /*color: #dbdde0;*/
+  background-color: #ceccc8;
+  border-radius: 50%;
+  padding-left: 30px;
 }
