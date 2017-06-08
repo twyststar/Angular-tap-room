@@ -19,8 +19,14 @@
   border-radius: 50%;
   padding-left: 30px;
 }
+.pint {
+  height: 100px;
+  width: 55;
+  float: right;
+}
 
 .panel {
   width: 33%;
   display: inline-grid;
+  font-family: 'Roboto', sans-serif;
 }

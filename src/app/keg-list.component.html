@@ -18,6 +18,9 @@
       <h3>{{keg.name}}</h3>
     </div>
     <div class="panel-body">
+      <img *ngIf="keg.amount >= 63" class="pint" src="./assets/img/full.jpeg" alt="" />
+      <img *ngIf="keg.amount >= 11 && keg.amount <= 62" class="pint" src="./assets/img/half-pint.jpg" alt="" />
+      <img *ngIf="keg.amount <= 10" class="pint" src="./assets/img/empty.jpg" alt="" />
       <ul>
         <li>{{keg.brand}}</li>
         <li [class]="priceColor(keg)">${{keg.price}} /pint</li>
@@ -27,8 +30,8 @@
     <div class="panel-footer">
       <h5>{{keg.amount}} pints left</h5>
     </div>
-    <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
-    <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+    <button class="btn btn-default" (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+    <button class="btn btn-default" (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
   </div>
 </div>
 
@@ -48,7 +51,7 @@
     <div class="panel-footer">
       <h5>{{keg.amount}} pints left</h5>
     </div>
-    <button (click)="editButtonHasBeenClicked(keg)">Edit!</button>
-    <button (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
+    <button class="btn btn-default" (click)="editButtonHasBeenClicked(keg)">Edit!</button>
+    <button class="btn btn-default" (click)="salesButtonHasBeenClicked(keg)">Buy a pint!</button>
   </div>
 </div>

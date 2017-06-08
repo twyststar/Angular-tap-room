@@ -18,6 +18,14 @@ export class FilterPipe implements PipeTransform {
       output.sort(function(a, b){
         return a.price - b.price;
       })
+    }else if (desiredFilter === "alcVol"){
+      output.sort(function(a, b){
+        return a.alcContent - b.alcContent;
+      })
+    }else if (desiredFilter === "amtLeft"){
+      output.sort(function(a, b){
+        return a.amount - b.amount;
+      })
     } else if  (desiredFilter === "allKegs"){
       return output
     }
